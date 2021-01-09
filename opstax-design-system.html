@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Opstax Design System</title>
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700&family=Source+Sans+Pro:wght@400;600&display=swap"
+			rel="stylesheet"
+		/>
+		<!-- GLOBAL STYLE -->
+		<style>
+			html {
+				background: #262b37;
+				background: -webkit-linear-gradient(top, #262b37, #16171c);
+				background: -moz-linear-gradient(top, #262b37, #16171c);
+				background: linear-gradient(to bottom, #262b37, #16171c);
+			}
+			body {
+				display: flex;
+				flex-direction: column;
+				padding: 10vw;
+				margin-bottom: 4em;
+			}
+			.typography {
+				color: #f7f7f7;
+			}
+			/* --- FONT --- */
+			h1 {
+				font-family: "Mulish", sans-serif;
+				font-weight: 700;
+				font-size: 1.625em;
+			}
+			h2 {
+				font-family: "Mulish", sans-serif;
+				font-weight: 400;
+				font-size: 5.625em;
+			}
+			h3 {
+				font-family: "Mulish", sans-serif;
+				font-weight: 600;
+				font-size: 1.25em;
+			}
+			p {
+				font-family: "Source Sans Pro", sans-serif;
+				font-weight: 400;
+				font-size: 1em;
+			}
+			.smallBody {
+				font-family: "Source Sans Pro", sans-serif;
+				font-weight: 400;
+				font-size: 0.8em;
+			}
+			.subTitle {
+				font-family: "Source Sans Pro", sans-serif;
+				font-weight: 600;
+				font-size: 1em;
+			}
+			/* --- COLOURS --- */
+			.orange {
+				color: #f6921e;
+			}
+			.white {
+				color: #f7f7f7;
+			}
+			.nearBlack {
+				color: #161924;
+			}
+			.green {
+				color: #00cc52;
+			}
+			.darkGradient {
+				background: #262b37;
+				background: -webkit-linear-gradient(top, #262b37, #16171c);
+				background: -moz-linear-gradient(top, #262b37, #16171c);
+				background: linear-gradient(to bottom, #262b37, #16171c);
+				height: 10vh;
+				width: auto;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+			.primaryGradient {
+				background: #e826d4;
+				background: -webkit-linear-gradient(right, #e826d4, #f6921e);
+				background: -moz-linear-gradient(right, #e826d4, #f6921e);
+				background: linear-gradient(to left, #e826d4, #f6921e);
+				height: 10vh;
+				width: auto;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+			.subGradient {
+				background: #ff607d;
+				background: -webkit-linear-gradient(right, #ff607d, #e48a00);
+				background: -moz-linear-gradient(right, #ff607d, #e48a00);
+				background: linear-gradient(to left, #ff607d, #e48a00);
+				height: 10vh;
+				width: auto;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+			button {
+				width: 20rem;
+				padding: 1rem 2rem;
+				font-family: "Mulish", sans-serif;
+				font-weight: 400;
+				font-size: 1.2em;
+				background: #e826d4;
+				background: -webkit-linear-gradient(right, #e826d4, #f6921e);
+				background: -moz-linear-gradient(right, #e826d4, #f6921e);
+				background: linear-gradient(to left, #e826d4, #f6921e);
+				color: #f7f7f7;
+				border-style: none;
+				border-radius: 0.3rem;
+				cursor: pointer;
+			}
+			hr {
+				background: #ff607d;
+				background: -webkit-linear-gradient(right, #ff607d, #e48a00);
+				background: -moz-linear-gradient(right, #ff607d, #e48a00);
+				background: linear-gradient(to left, #ff607d, #e48a00);
+				height: 0.1em;
+				border: none;
+			}
+			img {
+				margin-right: 1em;
+			}
+		</style>
+		<!-- INPUT STYLE -->
+		<style>
+			input {
+				font-family: inherit;
+				font-size: 100%;
+				margin: 0;
+				line-height: normal;
+			}
+			.content {
+				padding: 3em 0;
+			}
+			.input {
+				position: relative;
+				display: inline-block;
+				max-width: 20rem;
+				width: calc(100% - 2em);
+				vertical-align: top;
+				overflow: hidden;
+			}
+			.input__field {
+				position: relative;
+				width: 60%;
+				border: none;
+				font-family: "Source Sans Pro", sans-serif;
+				font-weight: 400;
+				font-size: 1em;
+				-webkit-appearance: none;
+				margin-top: 1em;
+				padding: 0.85em 0.15em;
+				width: 100%;
+				background: transparent;
+				color: #f7f7f7;
+			}
+			.input__field:focus {
+				outline: none;
+			}
+			.input__label {
+				float: right;
+				font-family: "Source Sans Pro", sans-serif;
+				font-weight: 400;
+				color: #f7f7f7;
+				font-weight: bold;
+				font-size: 80%;
+				-webkit-font-smoothing: antialiased;
+				-moz-osx-font-smoothing: grayscale;
+				user-select: none;
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				padding: 0 0.25em;
+				width: 100%;
+				height: calc(100% - 1em);
+				text-align: left;
+				pointer-events: none;
+			}
+			.input__label-content {
+				position: absolute;
+				display: block;
+				padding: 1em 0;
+				width: 100%;
+			}
+			.input__label::before {
+				content: "";
+				position: absolute;
+				width: 100%;
+				top: 90%;
+				height: 1px;
+				background: linear-gradient(to left, #ff607d, #e48a00);
+			}
+			.input__field:focus + .input__label .input__label-content,
+			.input--filled .input__label-content {
+				-webkit-animation: anim-1 0.3s forwards;
+				animation: anim-1 0.3s forwards;
+				color: #f6921e;
+			}
+			@keyframes anim-1 {
+				50% {
+					opacity: 0;
+					-webkit-transform: translate3d(1em, 0, 0);
+					transform: translate3d(1em, 0, 0);
+				}
+				51% {
+					opacity: 0;
+					-webkit-transform: translate3d(-1em, -40%, 0);
+					transform: translate3d(-1em, -40%, 0);
+				}
+				100% {
+					opacity: 1;
+					-webkit-transform: translate3d(0, -40%, 0);
+					transform: translate3d(0, -40%, 0);
+				}
+			}
+		</style>
+		<!-- INPUT STYLE -->
+		<style>
+			/* radio buttons */
+			.radioButtons {
+				display: flex;
+				align-items: center;
+				width: 20vw;
+				margin-top: 1em;
+			}
+			.container {
+				display: flex;
+				flex-direction: row;
+				position: relative;
+				padding-left: 1.5rem;
+				margin-bottom: 1rem;
+				cursor: pointer;
+				color: #f7f7f7;
+				-webkit-user-select: none;
+				-moz-user-select: none;
+				-ms-user-select: none;
+				user-select: none;
+				margin-right: 1em;
+				font-family: "Source Sans Pro", sans-serif;
+				font-weight: 400;
+				font-size: 1em;
+			}
+			.container input {
+				position: absolute;
+				opacity: 0;
+				cursor: pointer;
+			}
+
+			.checkmark {
+				position: absolute;
+				top: 0.1em;
+				left: 0;
+				height: 1em;
+				width: 1rem;
+				background-color: #e5e5e5;
+				border-radius: 50%;
+			}
+
+			.checkmark:after {
+				content: "";
+				position: absolute;
+				display: none;
+			}
+
+			.container input:checked ~ .checkmark:after {
+				display: block;
+			}
+
+			.container .checkmark:after {
+				top: 0.2em;
+				left: 0.2em;
+				width: 0.6em;
+				height: 0.6em;
+				border-radius: 50%;
+				background: #f6921e;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="typography">
+			<h1 class="orange">H1 : Mulish Bold</h1>
+			<h2>H2 : Mulish Regular</h2>
+			<h3 class="orange">H3 : Mulish Semibold</h3>
+			<p>Body : Source Sans Pro Regular</p>
+			<p class="subTitle">Body Subtitle : Source Sans Pro Semibold</p>
+			<p class="smallBody">Small Body : Source Sans Pro Regular</p>
+			<hr />
+		</div>
+
+		<div class="colours" style="margin-bottom: 1em">
+			<p class="orange">Orange : #F6921E</p>
+			<p class="white">White : #F7F7F7</p>
+			<p class="green">Green : #00CC52</p>
+			<div class="darkGradient">
+				<p class="white">
+					Dark Gradient. Use case : Left sidebar / Account settings overlay
+				</p>
+			</div>
+			<br />
+			<div class="primaryGradient">
+				<p class="white">Primary Gradient. Use case: CTA</p>
+			</div>
+			<br />
+			<div class="subGradient">
+				<p class="white">
+					Sub Gradient. Use case: keylines / payment details overlay
+				</p>
+			</div>
+		</div>
+
+		<div class="content">
+			<span class="input">
+				<input class="input__field" type="text" />
+				<label class="input__label input__label">
+					<span class="input__label-content">Name</span>
+				</label>
+			</span>
+		</div>
+
+		<button>I am a button</button>
+
+		<div
+			class="iconography"
+			style="margin-top: 2em; display: flex; align-items: center"
+		>
+			<img src="/icons/alert.svg" alt="" />
+			<img src="/icons/amex.svg" alt="" />
+			<img src="/icons/apple-pay.svg" alt="" />
+			<img src="/icons/check.svg" alt="" />
+			<img src="/icons/chevron.svg" alt="" />
+			<img src="/icons/close.svg" alt="" />
+			<img src="/icons/delete.svg" alt="" />
+			<img src="/icons/edit.svg" alt="" />
+			<img src="/icons/google-pay.svg" alt="" />
+			<img src="/icons/mastercard.svg" alt="" />
+			<img src="/icons/paypal.svg" alt="" />
+			<img src="/icons/upload.svg" alt="" />
+			<img src="/icons/visa.svg" alt="" />
+		</div>
+
+		<div class="radioButtons">
+			<label class="container">
+				Radio Button
+				<input type="radio" checked="checked" name="radio" />
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"
+				>Radio Button
+				<input type="radio" checked="checked" name="radio" />
+				<span class="checkmark"></span>
+			</label>
+		</div>
+		<!-- INPUT JS -->
+		<script>
+			(function (window) {
+				"use strict";
+				function classReg(className) {
+					return new RegExp("(^|\\s+)" + className + "(\\s+|$)");
+				}
+				var hasClass, addClass, removeClass;
+
+				if ("classList" in document.documentElement) {
+					hasClass = function (elem, c) {
+						return elem.classList.contains(c);
+					};
+					addClass = function (elem, c) {
+						elem.classList.add(c);
+					};
+					removeClass = function (elem, c) {
+						elem.classList.remove(c);
+					};
+				} else {
+					hasClass = function (elem, c) {
+						return classReg(c).test(elem.className);
+					};
+					addClass = function (elem, c) {
+						if (!hasClass(elem, c)) {
+							elem.className = elem.className + " " + c;
+						}
+					};
+					removeClass = function (elem, c) {
+						elem.className = elem.className.replace(classReg(c), " ");
+					};
+				}
+
+				function toggleClass(elem, c) {
+					var fn = hasClass(elem, c) ? removeClass : addClass;
+					fn(elem, c);
+				}
+
+				var classie = {
+					hasClass: hasClass,
+					addClass: addClass,
+					removeClass: removeClass,
+					toggleClass: toggleClass,
+
+					has: hasClass,
+					add: addClass,
+					remove: removeClass,
+					toggle: toggleClass,
+				};
+
+				if (typeof define === "function" && define.amd) {
+					define(classie);
+				} else {
+					window.classie = classie;
+				}
+			})(window);
+		</script>
+		<script>
+			(function () {
+				if (!String.prototype.trim) {
+					(function () {
+						var rtrim = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g;
+						String.prototype.trim = function () {
+							return this.replace(rtrim, "");
+						};
+					})();
+				}
+
+				[].slice
+					.call(document.querySelectorAll("input.input__field"))
+					.forEach(function (inputEl) {
+						if (inputEl.value.trim() !== "") {
+							classie.add(inputEl.parentNode, "input--filled");
+						}
+
+						inputEl.addEventListener("focus", onInputFocus);
+						inputEl.addEventListener("blur", onInputBlur);
+					});
+
+				function onInputFocus(ev) {
+					classie.add(ev.target.parentNode, "input--filled");
+				}
+
+				function onInputBlur(ev) {
+					if (ev.target.value.trim() === "") {
+						classie.remove(ev.target.parentNode, "input--filled");
+					}
+				}
+			})();
+		</script>
+	</body>
+</html>
